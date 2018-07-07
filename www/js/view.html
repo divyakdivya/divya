@@ -1,0 +1,29 @@
+<head>
+ <link rel="stylesheet" type="text/css" href="css/demo.css">
+ <script type="text/javascript" src="js/main.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function()
+ {
+ var url="http://localhost/phonegap/view.php";
+ $.getJSON(url,function(result){
+ console.log(result);
+ $.each(result, function(i, field){
+ var id=field.id;
+ var name=field.name;
+ var age=field.age;
+ var grade=field.grade;
+ $("#listview").append("<a class='item' href='main.html?id="+id+"&amp;name="+name+"&amp;age="+age+"&amp;grade="+grade+"'><span class='item-note'>$"+grade+"</span><h2&>"+ name + " </h2><p>"+ age +"</p>&</a>");
+ });
+ });
+ });
+ </script>
+</head>
+<body>
+ <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
+ <a href="index.html" class="button button-clear">Home</a>
+ <h1 class="title">Read the Data</h1>
+ </div>
+ <ul class="list" id="listview">
+ </ul>
+</body>
+</html>

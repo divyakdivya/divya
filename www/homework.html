@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/ionic.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
+    <title>HomeWork</title>
+   
+   
+   
+       <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var url = "http://localhost/phonegap/json.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+                var id = field.id;
+                var title = field.title;
+                var duration = field.duration;
+                var price = field.price;
+                $("#listview").append("<span class='item-note'>$" + price + "</span><h2>" + title + " </h2><p>" + duration + "</p>");
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+
+
+  <div class="bar bar-header bar-positive">
+	   <button class = "button icon ion-navicon"></button>
+        <h1 class="title">STUDENT</h1>
+		<button class = "button icon ion-home"></button>
+<!--         <a href="signup.html" class="button button-clear button-yellow">Signup</a> -->
+    </div>
+    <div class="bar bar-header">
+        <h1 class="title"></h1>
+        <a href="#" class="button button-clear" id="logout">Logout <i class="icon ion-power"></i></a>
+    </div>
+	<br>
+	<br>
+	<div class = "card">
+   <div class = "item item-avatar">
+      <img src = "img/1.jpg">
+      <h2>divya</h2>
+   </div>
+
+    
+	
+	<hr>
+	<div class = "list">
+    <div class = "item item-icon-left item-icon-left">
+      <i class = "icon ion-home"></i>
+	
+     HOME WORK
+   </div>
+
+ 
+</div>
+
+  <hr>
+
+
+    <ul class="list" id="listview">
+    </ul>
+</body>
+
+
+	
+	
+</body>
+
+<div class = "bar bar-footer bar-assertive">
+   <h1 class = "title"></h1>
+</div>
+
+	
+	
+	 <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jq.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+	
+	
+</body>
+
+<div class = "bar bar-footer bar-assertive">
+   <h1 class = "title"></h1>
+</div>
+
+</html>
